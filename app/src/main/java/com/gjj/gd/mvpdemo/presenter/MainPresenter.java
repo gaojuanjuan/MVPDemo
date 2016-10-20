@@ -17,7 +17,6 @@ public class MainPresenter implements Presenter<MainView>,IMainPresenter {
 
     public MainPresenter(MainView mainView) {
         attachView(mainView);
-        mMainView = mainView;
         mMainModel = new MainModel(this);
     }
 
