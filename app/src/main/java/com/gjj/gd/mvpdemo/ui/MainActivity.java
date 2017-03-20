@@ -1,13 +1,16 @@
 package com.gjj.gd.mvpdemo.ui;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.gjj.gd.mvpdemo.R;
+import com.gjj.gd.mvpdemo.googlemvp.views.UserInfoActivity;
 import com.gjj.gd.mvpdemo.model.MainModelBean;
 import com.gjj.gd.mvpdemo.presenter.MainPresenter;
 import com.gjj.gd.mvpdemo.view.MainView;
@@ -20,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements MainView{
     private TextView text;
     private ProgressBar mProgressBar;
     private MainPresenter mMainPresenter;
+    private Button google_mvp_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,13 @@ public class MainActivity extends AppCompatActivity implements MainView{
     private void initView() {
         text = (TextView) findViewById(R.id.text);
         mProgressBar = (ProgressBar) findViewById(R.id.mProgressBar);
+        google_mvp_btn = (Button) findViewById(R.id.google_mvp_btn);
+        google_mvp_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, UserInfoActivity.class));
+            }
+        });
         mMainPresenter = new MainPresenter(this);
         //制造延迟效果
         new Handler().postDelayed(new Runnable() {
