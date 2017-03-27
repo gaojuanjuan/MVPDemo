@@ -5,4 +5,5 @@
     <string name="ws">风级:</string>
     <string name="time">发布时间:</string>
     <string name="google_mvp">google官方的mvp</string>
+    <string name="instance2">MVP实例2</string>
 </resources>
